@@ -45,7 +45,7 @@
 
 ;;; Instructions
 
-(a:define-constant +jump-mode->bits+
+(defparameter *jump-mode->bits*
     (a:alist-hash-table
      '((nil . #*000)
        (:JGT . #*001)
@@ -54,9 +54,10 @@
        (:JLT . #*100)
        (:JNE . #*101)
        (:JLE . #*110)
-       (:JMP . #*111))))
+       (:JMP . #*111))
+     :test #'equal))
 
-(a:define-constant +comp-instructions->bits+
+(defparameter *comp-instructions->bits*
   (a:alist-hash-table
    '(("0" . #*0101010)
      ("1" . #*0111111)

@@ -6,8 +6,13 @@
   :license  "Specify license here"
   :version "0.0.1"
   :serial t
-  :depends-on (#:alexandria #:serapeum)
+  :depends-on (#:alexandria #:serapeum #:fiveam)
   :components ((:file "package")
                (:file "util")
                (:file "assembler")
-               (:file "vm-translator")))
+               (:file "vm-translator")
+               (:module "test"
+                :components
+                ((:file "util")
+                 (:file "assembler")
+                 (:file "vm-translator")))))
